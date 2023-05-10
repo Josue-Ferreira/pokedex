@@ -1,12 +1,23 @@
 import PropTypes from "prop-types"
 
 function NavBar ({pokemonIndex, setPokemonIndex, pokemonIndexMax}){
+    const isPikachu = (index) => {
+        if(index == 3)
+            alert('pika pikachu !!!');
+    }
+    
     const handleClickPrevious = () => {
-        pokemonIndex > 0 ? setPokemonIndex(pokemonIndex-1) : setPokemonIndex(0);
+        if(pokemonIndex > 0){
+            setPokemonIndex(pokemonIndex-1);
+            isPikachu(pokemonIndex-1);
+        }
     }
     
     const handleClickNext = () => {
-        pokemonIndex < pokemonIndexMax-1 ? setPokemonIndex(pokemonIndex+1) : setPokemonIndex(pokemonIndexMax-1); 
+        if(pokemonIndex < pokemonIndexMax-1){
+            setPokemonIndex(pokemonIndex+1);
+            isPikachu(pokemonIndex+1);
+        }
     }
     
     return(
